@@ -72,14 +72,6 @@ MK8D-Eden-Checker/
         └── temp/
 ```
 
-## What gets installed
-
-| Platform | Output |
-|----------|--------|
-| Windows | `Eden Emulator\` folder next to the exe |
-| macOS | `.app` copied to `/Applications` |
-| Linux | `Eden-Emulator.AppImage` next to the binary |
-
 ## Links
 
 - [Eden Emulator](https://eden-emu.dev)
