@@ -80,30 +80,6 @@ MK8D-Eden-Checker/
 | macOS | `.app` copied to `/Applications` |
 | Linux | `Eden-Emulator.AppImage` next to the binary |
 
-## Building from source
-
-You need Python 3 and pip.
-
-**Windows (Git Bash or any shell):**
-
-```bash
-./build.sh
-```
-
-**macOS / Linux:**
-
-```bash
-chmod +x build.sh && ./build.sh
-```
-
-This installs PyInstaller, compiles the script, and drops `Eden Checker.exe` (or `Eden Checker` on mac/linux) in the current folder. The `dist/`, `build/`, and `.spec` file are cleaned up automatically.
-
-## Requirements
-
-- Python 3.8 or newer
-- PyInstaller (installed automatically by `build.sh`)
-- No third-party Python packages
-
 ## Links
 
 - [Eden Emulator](https://eden-emu.dev)
