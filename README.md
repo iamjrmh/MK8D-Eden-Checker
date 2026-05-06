@@ -20,7 +20,7 @@ This tool bundles everything you need to get MK8D up and running on Eden Emulato
 
 ## Download
 
-Grab the latest `Eden Checker.exe` (or binary for your platform) from [here](https://github.com/iamjrmh/MK8D-Eden-Checker/releases/latest).
+Grab the latest `MK8DEdenChecker.zip` from [here](https://github.com/iamjrmh/MK8D-Eden-Checker/releases/latest/download/MK8DEdenChecker.zip).
 
 ## Usage
 
