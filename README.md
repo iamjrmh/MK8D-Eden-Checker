@@ -53,6 +53,25 @@ You'll see a menu like this:
 - **Enable nightly** switches to nightly builds from the Eden CI repo
 - After picking a version you get a 3 second countdown before the download starts, press any key to cancel
 
+## Directory Structure
+
+```
+MK8D-Eden-Checker/
+├── Eden Checker.exe
+├── Firmware 21.2.0.zip
+├── Keys 21.2.0/
+│   ├── prod.keys
+│   └── title.keys
+└── System & User/
+    ├── system/
+    │   └── Contents/
+    │       └── registered/  (219 items)
+    └── user/
+        ├── Contents/
+        │   └── registered/
+        └── temp/
+```
+
 ## What gets installed
 
 | Platform | Output |
