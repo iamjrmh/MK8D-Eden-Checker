@@ -69,7 +69,7 @@ You'll see a menu like this:
 - **Choose version** lists recent releases so you can pick one
 - **Setup** copies your keys and NAND folders into Eden's appdata and walks you through firmware installation
 - **Enable nightly** switches to nightly builds from the Eden CI repo
-- **Multiplayer Info** shows step-by-step LAN-over-VPN (RadminVPN) instructions for hosting and joining a Mario Kart 8 Deluxe room
+- **Multiplayer Info** shows step-by-step ZeroTier LAN instructions for hosting and joining a Mario Kart 8 Deluxe room
 - **About This Tool** displays this usage info, the recommended order, directory layout, and useful links right inside the program
 - After picking a version you get a 3 second countdown before the download starts, press any key to cancel
 
@@ -80,6 +80,37 @@ You'll see a menu like this:
 3. Select **Setup** to install your keys, NAND, and firmware
 4. Launch Eden and load MK8D
 
+## Multiplayer (ZeroTier)
+
+LAN multiplayer uses [ZeroTier](https://zerotier.com) to put everyone on one virtual LAN so Eden's LAN Play can find each other. It is free and works on Windows, macOS, and Linux. The in-app **Multiplayer Info** screen has the full host/join walkthrough; this is the short version.
+
+**Install ZeroTier One:**
+
+- **Windows:** run the bundled `ZeroTier One.msi`
+- **macOS:** run the bundled `ZeroTier One.pkg`
+- **Linux** (Debian/Ubuntu/CentOS/RHEL/Fedora and others), run in a terminal:
+
+  ```bash
+  curl -s https://install.zerotier.com | sudo bash
+  ```
+
+  Or, if you have GPG and prefer to verify the installer:
+
+  ```bash
+  curl -s 'https://raw.githubusercontent.com/zerotier/ZeroTierOne/main/doc/contact%40zerotier.com.gpg' | gpg --import && \
+  if z=$(curl -s 'https://install.zerotier.com/' | gpg); then echo "$z" | sudo bash; fi
+  ```
+
+  After install, manage updates to `zerotier-one` with `apt` or `yum`.
+
+**Then:**
+
+1. The host creates a free network at [my.zerotier.com](https://my.zerotier.com) and shares the 16-character Network ID.
+2. Everyone joins it (tray icon > Join Network on Windows/macOS, or `sudo zerotier-cli join <NetworkID>` on Linux).
+3. The host authorizes each member on my.zerotier.com (tick the checkbox).
+4. Host: Eden > Multiplayer > **Create Room**. Joiners: Eden > Multiplayer > **Direct Connect To Room** using the host's ZeroTier IP.
+5. In MK8D, open the Title Screen and press **Left Bumper + Right Bumper + Left Stick (in)** to switch Wireless Play to **LAN Play**, then host/join the room.
+
 ## Directory Structure
 
 ```
@@ -87,7 +118,8 @@ MK8D-Eden-Checker/
 ├── EdenChecker.exe         # Windows build
 ├── EdenCheckerLinux        # Linux build (chmod +x to run)
 ├── EdenCheckerMac          # macOS build, Apple Silicon + Intel (chmod +x to run)
-├── RadminVPN.exe
+├── ZeroTier One.msi        # ZeroTier installer (Windows)
+├── ZeroTier One.pkg        # ZeroTier installer (macOS)
 ├── Firmware 21.2.0.zip
 ├── Keys 21.2.0/
 │   ├── prod.keys
