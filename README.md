@@ -24,16 +24,26 @@ Grab the latest `MK8DEdenChecker.zip` from [here](https://github.com/iamjrmh/MK8
 
 ## Usage
 
-Just run the executable. No installation needed.
+Just run the executable for your platform. No installation needed. Every build ships inside the same `MK8DEdenChecker.zip`, so keep the binary next to the bundled `Keys 21.2.0/`, `System & User/`, and `Firmware 21.2.0.zip` files.
+
+**Windows:**
 
 ```
-Eden Checker.exe
+EdenChecker.exe
 ```
 
-On macOS or Linux:
+**Linux** (added in v3.0): mark it executable once, then run it from a terminal:
 
 ```bash
-./Eden\ Checker
+chmod +x EdenCheckerLinux
+./EdenCheckerLinux
+```
+
+**macOS** (added in v3.0): use the build for your chip (Apple Silicon or Intel), then:
+
+```bash
+chmod +x EdenCheckerMac
+./EdenCheckerMac
 ```
 
 You'll see a menu like this:
@@ -73,8 +83,10 @@ You'll see a menu like this:
 ## Directory Structure
 
 ```
-MK8DEdenChecker/
-├── Eden Checker.exe
+MK8D-Eden-Checker/
+├── EdenChecker.exe         # Windows build
+├── EdenCheckerLinux        # Linux build (chmod +x to run)
+├── EdenCheckerMac          # macOS build, Apple Silicon + Intel (chmod +x to run)
 ├── RadminVPN.exe
 ├── Firmware 21.2.0.zip
 ├── Keys 21.2.0/
