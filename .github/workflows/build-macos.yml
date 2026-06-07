@@ -1,42 +1,50 @@
 name: Build macOS Binary
 
 # Manual only. Run it from the Actions tab, then download the built
-# "EdenCheckerMac" binaries from the run's Artifacts section.
-# Builds both Apple Silicon (arm64) and Intel (x86_64).
+# "EdenCheckerMac" binary from the run's Artifacts section.
+#
+# Produces a single universal2 binary that runs natively on BOTH
+# Apple Silicon (arm64) and Intel (x86_64), so no Intel runner is needed
+# (GitHub's hosted Intel macOS runners are being retired and often never
+# pick the job up).
 on:
   workflow_dispatch:
 
 jobs:
   build-macos:
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - arch: AppleSilicon
-            runner: macos-14   # Apple Silicon (arm64)
-          - arch: Intel
-            runner: macos-13   # Intel (x86_64)
+    runs-on: macos-14   # Apple Silicon runner; builds for both arches
 
-    runs-on: ${{ matrix.runner }}
+    env:
+      PY_VERSION: "3.12.7"
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
+      # GitHub's setup-python is single-arch, so install the official
+      # python.org universal2 framework build instead.
+      - name: Install universal2 Python
+        run: |
+          curl -fL -o python-universal2.pkg \
+            "https://www.python.org/ftp/python/${PY_VERSION}/python-${PY_VERSION}-macos11.pkg"
+          sudo installer -pkg python-universal2.pkg -target /
+          PYBIN="/Library/Frameworks/Python.framework/Versions/3.12/bin"
+          echo "$PYBIN" >> "$GITHUB_PATH"
 
       - name: Install PyInstaller
-        run: python -m pip install --upgrade pip pyinstaller
+        run: python3 -m pip install --upgrade pip pyinstaller
 
-      - name: Build macOS binary
-        run: pyinstaller --onefile --console --name EdenCheckerMac eden_update.py
+      - name: Build universal2 binary
+        run: python3 -m PyInstaller --onefile --console --target-arch universal2 --name EdenCheckerMac eden_update.py
+
+      - name: Verify it is universal2
+        run: |
+          file dist/EdenCheckerMac
+          lipo -archs dist/EdenCheckerMac
 
       - name: Upload binary
         uses: actions/upload-artifact@v4
         with:
-          name: EdenCheckerMac-${{ matrix.arch }}
+          name: EdenCheckerMac
           path: dist/EdenCheckerMac
           if-no-files-found: error
