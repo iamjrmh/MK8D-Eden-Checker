@@ -111,6 +111,13 @@ LAN multiplayer uses [ZeroTier](https://zerotier.com) to put everyone on one vir
 4. Host: Eden > Multiplayer > **Create Room**. Joiners: Eden > Multiplayer > **Direct Connect To Room** using the host's ZeroTier IP.
 5. In MK8D, open the Title Screen and press **Left Bumper + Right Bumper + Left Stick (in)** to switch Wireless Play to **LAN Play**, then host/join the room.
 
+### Backup options
+
+ZeroTier is recommended, but if it gives you trouble these also create a virtual LAN you can use the same way (install it on every player's machine, then host/join in Eden by IP):
+
+- **[Radmin VPN](https://www.radmin-vpn.com)** - free, simple network name + password flow. **Windows only.**
+- **[LogMeIn Hamachi](https://www.vpn.net)** - free, cross-platform (Windows, macOS, Linux). Capped at **5 devices per network** on the free tier, and the Linux client is barebones.
+
 ## Directory Structure
 
 ```
