@@ -2,7 +2,7 @@
   <img src="https://github.com/iamjrmh/CHSuite/blob/main/Windows/_internal/Images/JURMRWEED.png?raw=true" width="120" />
 </p>
 
-<h1 align="center">MK8D-Eden-Checker</h1>
+<h1 align="center">MK8DEdenChecker</h1>
 
 <p align="center">
   The quickest way to get <strong>Mario Kart 8 Deluxe</strong> running on <a href="https://eden-emu.dev">Eden Emulator</a> - downloads MK8D and keeps your emulator up to date, all in one place.
