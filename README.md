@@ -46,17 +46,21 @@ You'll see a menu like this:
 
  Selected : None
 
- 1. Choose version
- 2. Download MK8D
- 3. Enable nightly
- 4. Setup (Keys, NAND & Firmware)
- 5. Exit
+ 1. Download MK8D
+ 2. Choose version
+ 3. Setup (Keys, NAND & Firmware)
+ 4. Enable nightly
+ 5. Multiplayer Info
+ 6. About This Tool
+ 7. Exit
 ```
 
-- **Choose version** lists recent releases so you can pick one
 - **Download MK8D** opens the MK8D Google Drive download link in your browser - start here if you just need the game
-- **Enable nightly** switches to nightly builds from the Eden CI repo
+- **Choose version** lists recent releases so you can pick one
 - **Setup** copies your keys and NAND folders into Eden's appdata and walks you through firmware installation
+- **Enable nightly** switches to nightly builds from the Eden CI repo
+- **Multiplayer Info** shows step-by-step LAN-over-VPN (RadminVPN) instructions for hosting and joining a Mario Kart 8 Deluxe room
+- **About This Tool** displays this usage info, the recommended order, directory layout, and useful links right inside the program
 - After picking a version you get a 3 second countdown before the download starts, press any key to cancel
 
 ## Getting Started (Recommended Order)
@@ -69,8 +73,9 @@ You'll see a menu like this:
 ## Directory Structure
 
 ```
-MK8D-Eden-Checker/
+MK8DEdenChecker/
 ├── Eden Checker.exe
+├── RadminVPN.exe
 ├── Firmware 21.2.0.zip
 ├── Keys 21.2.0/
 │   ├── prod.keys
