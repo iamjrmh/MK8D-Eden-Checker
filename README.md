@@ -39,10 +39,10 @@ chmod +x EdenCheckerLinux
 ./EdenCheckerLinux
 ```
 
-**macOS** (added in v3.0): use the build for your chip (Apple Silicon or Intel), then:
+**macOS** (added in v3.0): a single universal binary that runs natively on both Apple Silicon and Intel:
 
 ```bash
-chmod +x EdenCheckerMac-AppleSilicon or chmod +x EdenCheckerMac-Intel
+chmod +x EdenCheckerMac
 ./EdenCheckerMac
 ```
 
