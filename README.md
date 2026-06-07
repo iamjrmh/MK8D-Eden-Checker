@@ -42,7 +42,7 @@ chmod +x EdenCheckerLinux
 **macOS** (added in v3.0): use the build for your chip (Apple Silicon or Intel), then:
 
 ```bash
-chmod +x EdenCheckerMac
+chmod +x EdenCheckerMac-AppleSilicon or chmod +x EdenCheckerMac-Intel
 ./EdenCheckerMac
 ```
 
