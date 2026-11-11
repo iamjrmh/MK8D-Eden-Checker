@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/iamjrmh/CHSuite/blob/main/Windows/_internal/Images/JURMRWEED.png?raw=true" width="120" />
+  <img src="https://raw.githubusercontent.com/iamjrmh/MK8D-Eden-Checker/refs/heads/main/eden.ico" width="120" />
 </p>
 
 <h1 align="center">MK8DEdenChecker</h1>
